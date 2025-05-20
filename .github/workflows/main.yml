@@ -54,7 +54,6 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           unityVersion: 6000.0.37f1
-          projectPath: path/to/your/project
           githubToken: ${{ secrets.GITHUB_TOKEN }}
       #Output
       - uses: actions/upload-artifact@v4
