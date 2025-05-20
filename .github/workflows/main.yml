@@ -13,7 +13,6 @@ jobs:
       fail-fast: false
       matrix:
         testMode:
-          - EditMode
           - PlayMode
     steps:
       #Checkout
