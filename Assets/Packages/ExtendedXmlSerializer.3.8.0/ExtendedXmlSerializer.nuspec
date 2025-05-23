@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>ExtendedXmlSerializer</id>
+    <version>3.8.0</version>
+    <authors>Wojciech Nagórski,Michael DeMond</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>Logo.png</icon>
+    <projectUrl>https://extendedxmlserializer.github.io/</projectUrl>
+    <description>An extensible Xml Serializer for .NET that builds on the functionality of the classic XmlSerializer with a powerful and robust extension model.</description>
+    <releaseNotes>Latest release notes with downloads are available here:
+https://github.com/ExtendedXmlSerializer/home/releases
+
+Single-file CHANGELOG featuring overview and history of changes since v3.0.0:
+https://github.com/ExtendedXmlSerializer/home/blob/master/CHANGELOG.md</releaseNotes>
+    <tags>xmlserializer xmlserialization serialization ExtendedXmlSerializer xml</tags>
+    <repository type="git" url="https://github.com/ExtendedXmlSerializer/home.git" commit="4f0302daa49b7df0ebd6f4f15a4626f623012058" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="LightInject" version="6.6.1" exclude="Build,Analyzers" />
+        <dependency id="NReco.LambdaParser" version="1.0.12" exclude="Build,Analyzers" />
+        <dependency id="Sprache" version="2.3.1" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Immutable" version="7.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

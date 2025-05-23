@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: a6502effdef882f49ba79b05eab8671f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pim: {instanceID: 0}
+  - brightnessSlider: {instanceID: 0}
+  - brightnessSliderText: {instanceID: 0}
+  - pixelSlider: {instanceID: 0}
+  - fullscreenToggle: {instanceID: 0}
+  - fullscreenlabelText: {instanceID: 0}
+  - vsyncToggle: {instanceID: 0}
+  - vsyncText: {instanceID: 0}
+  - highPixelTexture: {fileID: 8400000, guid: d6aa1eeb2298f11459d06b5b46e88692, type: 2}
+  - midHighPixelTexture: {fileID: 8400000, guid: 64ea2f798240e50469b8162e31eee777, type: 2}
+  - midLowPixelTexture: {fileID: 8400000, guid: 64ea2f798240e50469b8162e31eee777, type: 2}
+  - lowPixelTexture: {fileID: 8400000, guid: d6bc8fde81aa1c940898f884cba472b8, type: 2}
+  - renderTexture: {fileID: 8400000, guid: 86e0cb91247d13240871d11c3899b6a4, type: 2}
+  - mainCamera: {instanceID: 0}
+  - pixelRender: {instanceID: 0}
+  - pixelizationRawImage: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8370719107993736109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 682382154289545316}
+  - component: {fileID: -5629575195831062333}
+  - component: {fileID: -3605360890775065085}
+  - component: {fileID: 4426364970082905807}
+  m_Layer: 0
+  m_Name: Zombie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &682382154289545316
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370719107993736109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 499.5, y: 395, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5629575195831062333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370719107993736109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99815017797c256449689dc863b36df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsToSpawnAsNeeded: []
+  itemsToBeReturned: []
+  itemsToPlaceRandomly: []
+  itemsToPlaceAtMonsterLocation: []
+  itemsToPlaceInReception: []
+  itemsToPlaceAtLocation: []
+  locations: []
+  itemsToStoreInBlackBoard: []
+  blackboardKeys: []
+--- !u!114 &-3605360890775065085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370719107993736109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d167b99e518944b9f03fea705faf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Zombie
+  viewRadius: 20
+  viewAngle: 150
+  _speed: 5
+  _runningSpeedModifier: 2
+  _throwable: {fileID: 0}
+  Cost: 0
+  NavMeshAgentId: 0
+  spawnItems: []
+  _animatorController: {fileID: 9100000, guid: 7bc015bf15bb0604993eda1c6da66801, type: 2}
+  range: 20
+  isDead: 0
+  _angularSpeed: 20
+  _acceleration: 12
+  _stoppingDistance: 0
+  _autoBreaking: 1
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 512
+  navmeshMask:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &4426364970082905807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8370719107993736109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 4139017355
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0

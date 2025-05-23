@@ -1,0 +1,9 @@
+diff a/Assets/Scripts/StateMachine/Enemy/EnemyControllerContext.cs b/Assets/Scripts/StateMachine/Enemy/EnemyControllerContext.cs	(rejected hunks)
+@@ -9,7 +9,6 @@
+ using UnityEngine.Events;
+ using UnityServiceLocator;
+ using static TimeTickSystem;
+-using static UnityEngine.UI.Image;
+ 
+ public class EnemyControllerContext : MonoBehaviour
+ {

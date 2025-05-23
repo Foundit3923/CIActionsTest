@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1849116874996865979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259983888535940993}
+  - component: {fileID: 1192799416164986518}
+  - component: {fileID: 4933529681368004580}
+  m_Layer: 0
+  m_Name: GrimmGen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259983888535940993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849116874996865979}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192799416164986518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849116874996865979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2382fcbbb5e80d498ac2ebee09ab4ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldGeometry: {fileID: 7862486031275817146, guid: 929df08c6a71e36458d8f2f491dd6cbc, type: 3}
+  Geometries:
+  - {fileID: 139398394741227863, guid: b74fede86e04523459862d469f2ada32, type: 3}
+  - {fileID: 6136966497710155457, guid: 0299b6c161d07ae4aba7c72df07ffd44, type: 3}
+  WorldFloor: {fileID: 2532005715111922897, guid: 23a00b74e410f6c479e03c4297eb83ac, type: 3}
+  _blankTile: {fileID: 5588555042702220295, guid: e04dab5b885d0cd408d00a3723a0569a, type: 3}
+  _worldSize: {x: 50, y: 1, z: 50}
+  roomAttempts: 30
+  _roomList:
+  - {fileID: 7981293274931406050, guid: 3cf894dde22101c40a7c08e86ced4a2c, type: 3}
+  - {fileID: 6585786096800194520, guid: 400f956a018b2bf4b869741d68cafc4d, type: 3}
+  - {fileID: 2442208405761958436, guid: 35af4ea55ea0b834b8db4e3490dc4c42, type: 3}
+  - {fileID: 6585786096800194520, guid: fab555510631cdf4c9bd93e3da5417ed, type: 3}
+  - {fileID: 7981293274931406050, guid: 3ef164e4b4223694c9775936aee30cdd, type: 3}
+  _receptionRooms:
+  - {fileID: 7952965600028180122, guid: 9ec1d6f2820af0446828e0a2528f5929, type: 3}
+  _requiredRoomsList: []
+  _hallwaysPristine:
+  - {fileID: 5588555042702220295, guid: 08d1a23033618e64c9b9e8dd135d784a, type: 3}
+  _hallwaysDestroyed:
+  - {fileID: 3794841681964377683, guid: f212072f8d6a06a40811cb48cd208810, type: 3}
+  _wallsPristine:
+  - {fileID: 5588555042702220295, guid: 68fd663ae4dd11f45b3f368da2d41f98, type: 3}
+  - {fileID: 5588555042702220295, guid: 561ede60b68ef55449c42f35e2d3ea9f, type: 3}
+  - {fileID: 9169395885962409244, guid: 4dba5896bfd42ac4ca601f84d17bb8b2, type: 3}
+  _wallsDestroyed:
+  - {fileID: 7324069465701839210, guid: afafb0c1ed71170428e295dbb40b0f69, type: 3}
+  - {fileID: 5482622311062099087, guid: e34fcd4342a91bc4487657b83a672290, type: 3}
+  - {fileID: 9169395885962409244, guid: 4dba5896bfd42ac4ca601f84d17bb8b2, type: 3}
+  _hallwayPrefab: {fileID: 3032117554527772367, guid: 4a9ab1061e8b8cd47a8353fc1a2a4c0a, type: 3}
+  _stairsPrefab: {fileID: 5422545705977224615, guid: 1c66f817dbab096418794396d74ae07a, type: 3}
+  _markerPrefab: {fileID: 3120719283192590332, guid: 2387893aea527b3489feb031a34ff873, type: 3}
+  _emptyPrefab: {fileID: 9169395885962409244, guid: 5ebbf0662adc9fa428d9c63465279e2a, type: 3}
+  _targetPortal: {fileID: 92059214240372406, guid: 4b3bb8fa36a80514d9cf9469ba749519, type: 3}
+  _green: {fileID: 2100000, guid: 9a98c2669a45344418bdb933a6e3b816, type: 2}
+  _blue: {fileID: 2100000, guid: 8f646139783bb204bab0cb5b7c7dd3b5, type: 2}
+  _purple: {fileID: 2100000, guid: d9f044d8e8d9a0040914293354746713, type: 2}
+  _black: {fileID: 2100000, guid: c5175f1a7104b7c4dbf176b2577ae741, type: 2}
+  _white: {fileID: 2100000, guid: 8996896fb77bac842969445d31ef6f02, type: 2}
+  _darkGreen: {fileID: 2100000, guid: a444384ad5c4bdb46863264a128635a4, type: 2}
+  _gray: {fileID: 2100000, guid: 35ce21c3710027844a58728a83a41678, type: 2}
+  spawnMoreThanOneLevel: 0
+  CacheSources: 0
+  _triangulation: 0
+  _mst: 0
+  _additionalEdges: 0
+  _failedEdges: 0
+  _overlapCubes: 0
+  MaxAttempts: 4
+  seed: 0
+  _blankTileDimensions: {x: 0, y: 0, z: 0}
+  _originalTileMat: {fileID: 0}
+  difficultyManager: {fileID: 0}
+  budget: 100
+  requiredMonsterCount: 1
+  itemsToSpawn: []
+  OnEventTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4933529681368004580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849116874996865979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 12795207
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0

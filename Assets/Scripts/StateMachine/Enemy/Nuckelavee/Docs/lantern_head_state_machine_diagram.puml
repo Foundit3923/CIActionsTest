@@ -1,0 +1,90 @@
+/'
+
+Welcome and thank you for using Pladitor!
+=========================================
+
+First Steps Overview
+--------------------
+
+The Toolbar Menu provides these functionalities:
+    ------------
+
+ - Editor:       This page. Work on your diagrams here.
+ - Templates:    The template gallery for all kinds of 
+                 diagram types
+ - Preferences:  Settings page to set language, theme etc.
+                 (only in desktop version)
+ - Feedback:     A page for giving feedback to the  
+                 Pladitor team.
+ - About:        General information about Pladitor.
+ 
+The Top Toolbar provides these functionalities:
+    -----------
+    
+  - Select or add new diagram tab
+  - Close current diagram tab
+  - Open diagram from text-, PNG-, or SVG-files (only in desktop version)
+  - Add diagram to custom templates gallery (only in desktop version)
+  - Open color dialog (PlantUML colorcodes only in desktop version)
+  - Open OpenIconic icons dialog
+  - Open Emoji icons dialog (all emojis only in desktop version)
+  - Show/Hide PlantUML Guides section
+  - Show keyboard shortcuts (only in desktop version)
+  - Open external help URL
+  - Save diagram source as text file
+  - Export diagram as SVG, flattened SVG, PNG, PDF, EPS, TXT image, or as URL
+  
+The top right window previews the current diagram in the configured format.
+    ----------------
+    
+The bottom right window provides PlantUML guides for all kinds of diagrams.
+    -------------------
+    
+Double-click on any text within the diagram to navigate to its source code.
+------------                                   --------
+  
+'/
+
+@startuml
+
+hide empty description
+
+state "Reset" as State1
+state "Patrol" as State2
+state "Chase" as State3
+state "PlayerCapture" as State4
+state "PlayerTransform" as State5
+state "Interrupt" as State6
+state "Scan" as State7
+state "CheckTargets" as State8
+state "Death" as State9
+
+[*] --> State1 : [spawn]
+State1 --> State6
+State1 --> State2
+
+State2 --> State3
+State2 --> State6
+
+State3 --> State6
+State3 --> State4
+State3 --> State7
+
+State4 --> State5
+State4 --> State6
+
+State5 --> State6
+
+State6 --> State1
+State6 --> State9
+
+State7 --> State8
+State7 --> State3
+State7 --> State6
+
+State8 --> State3
+State8 --> State6
+
+State9 --> [*] : [end condition]
+
+@enduml

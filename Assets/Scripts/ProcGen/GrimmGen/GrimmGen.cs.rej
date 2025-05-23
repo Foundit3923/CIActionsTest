@@ -1,0 +1,213 @@
+diff a/Assets/Scripts/ProcGen/GrimmGen/GrimmGen.cs b/Assets/Scripts/ProcGen/GrimmGen/GrimmGen.cs	(rejected hunks)
+@@ -1,211 +1,204 @@
+  /*
+  * Generates a random layout consisting of required rooms (if specified), a random number and quantity of rooms from a room list, and connecting hallwayTiles between them.
+  * Hallways are generated using A*, and Delaunay triangulation.
+  * Doorways are generated when a hallway passes through the edge of a room. This results in connected rooms when the rooms are touching and the hallway passes through both.
+  * The floor is placed first as the grid system and is in the `NavMesh` layer. All other room assets are placed separately and are in the `Obstacle` layer.
+  * Once everything is placed the floor is pruned of any unused tiles. The NavMeshSurface is baked into the remaining tiles with everything in the `Obstacle` layer as obstacles.
+  * At this point we will know every monster in the level and a Nav Mesh is created for each.
+  * The monsters are then spawned in the world along with any monster items.
+  * Finally a target portal is placed connecting the starting room with the lobby.
+  */
+ 
+ 
+ using UnityEngine;
+ using System.Collections.Generic;
+ using System.Linq;
+ using System;
+ using Graphs;
+ using UnityServiceLocator;
+ using Unity.AI.Navigation;
+ using UnityEngine.AI;
+ using Mirror;
+ using NightGauntStates;
+ using Unity.VisualScripting;
+ using static Unity.VisualScripting.Member;
+-using static GrimmGen;
+-using UnityEngine.Events;
+ 
+ 
+ public class GrimmGen : MonoBehaviour
+ {
+     [SerializeField] private GameObject WorldGeometry;
+     [SerializeField] private NavMeshSurface[] Geometries;
+     [SerializeField] private GameObject WorldFloor = null;
+     [SerializeField] GameObject _blankTile;
+     [SerializeField] Vector3Int _worldSize;
+     [SerializeField] int roomAttempts;
+     //Rooms currently have their floors still attached
+     [SerializeField] List<GameObject> _roomList, _receptionRooms, _requiredRoomsList, _hallwaysPristine, _hallwaysDestroyed, _wallsPristine, _wallsDestroyed;
+     [SerializeField] GameObject _hallwayPrefab, _stairsPrefab, _markerPrefab, _emptyPrefab, _targetPortal;
+     [SerializeField] Material _green, _blue, _purple, _black, _white, _darkGreen, _gray;
+     [SerializeField] public bool spawnMoreThanOneLevel;
+     [SerializeField] public bool CacheSources;
+     [SerializeField] bool _triangulation;
+     [SerializeField] bool _mst;
+     [SerializeField] bool _additionalEdges;
+     [SerializeField] bool _failedEdges;
+     [SerializeField] bool _overlapCubes;
+     [SerializeField] public static bool debug = false;
+     [SerializeField] private int MaxAttempts;
+     [SerializeField] private Int32 seed;
+     private int attempts;
+     public Tile blankTileTemplate;
+     public Vector3Int _blankTileDimensions;
+     public Material _originalTileMat;
+     private int unitSize;
+ 
+     Grid3D<Tile> grid;
+     List<Tile> doors;
+     List<Room> hallwaySegments = new();
+     List<Room> rooms;
+     List<Hallway> hallways;
+     List<Tile> hallwayTiles;
+     List<Tile> allTiles;
+     List<Tile> allRoomTiles = new();
+     List<GameObject> obstacles;
+     Delaunay2D delaunay;
+     HashSet<Prim.Edge> selectedEdges;
+     System.Random _rand;
+     BlackboardController blackboardController;
+     Blackboard blackboard;
+     BlackboardKey receptionRoomKey;
+     int agentTypeId;
+ 
+     float ProcGenBudget;
+ 
+     public DifficultyManager difficultyManager;
+     [SerializeField] public int budget;
+     public int requiredMonsterCount;
+     public BlackboardKey navMeshAgentDictionaryKey;
+     public Dictionary<string, GameObject> navMeshAgentDictionary = new();
+     public Dictionary<string, int> selectedNavMeshAgentDictionary = new();
+     public List<(GameObject, Vector3)> monstersToSpawn = new();
+     public List<InitializeItems> itemsToSpawn = new();
+ 
+     public delegate void NavMeshUpdatedEvent(Bounds bounds);
+     public NavMeshUpdatedEvent OnNavMeshUpdate;
+     private List<NavMeshSurface> fullBakeSurfaces = new List<NavMeshSurface>();
+     private Dictionary<int, Dictionary<int, List<NavMeshBuildSource>>> SourcesPerSurface = new();
+     private Dictionary<int, Dictionary<int, List<NavMeshBuildMarkup>>> MarkupsPerSurface = new();
+     private Dictionary<int, Dictionary<int, List<NavMeshModifier>>> ModifiersPerSurface = new();
+     private List<List<NavMeshData>> NavMeshDatas;
+     private Vector3 WorldAnchor;
+     private Bounds navMeshBounds;
+     private int navMeshBakeRetryCount;
+     private bool rebuildAll;
+ 
+     private List<pairs> toDrawTriangulation = new List<pairs>();
+     private List<pairs> toDrawMst = new List<pairs>();
+     private List<pairs> toDrawAdditionalEdges = new List<pairs>();
+     private List<pairs> toDrawFailedEdges = new List<pairs>();
+     private List<cube> toDrawDoorCube = new();
+     private List<cube> toDrawFreeCube = new();
+ 
+     public delegate void PruneTileEvent(bool x);
+     public static event PruneTileEvent OnPruneTile;
+ 
+-    public delegate void AsyncNavMeshDataBuildComplete(NavMeshSurface x);
+-    public static event AsyncNavMeshDataBuildComplete OnAsyncNavMeshDataBuildComplete;
+-
+-    public UnityEvent OnEventDetected;
+-
+     private FizzyNetworkManager manager;
+     private FizzyNetworkManager Manager
+     {
+         get
+         {
+             if (manager != null)
+             {
+                 return manager;
+             }
+             if (FizzyNetworkManager.singleton != null)
+             {
+                 return manager = FizzyNetworkManager.singleton as FizzyNetworkManager;
+             }
+             return ServiceLocator.For(this).Get<FizzyNetworkManager>();
+         }
+     }
+     // Start is called once before the first execution of Update after the MonoBehaviour is created
+ 
+     //                Collider[] hitColliders = Physics.OverlapBox(t.self.GetComponentInChildren<Target>().transform.position, new Vector3(unitSize,unitSize,unitSize)/2, Quaternion.identity, LayerMask.NameToLayer("Prop"));
+     public class cube
+     {
+         public Vector3 position;
+         public Vector3 size;
+         public cube (Vector3 _position, Vector3 _size)
+         {
+             this.position = _position;
+             this.size = _size;
+         }
+     }
+ 
+     public class pairs
+     {
+         public Vector2 a, b;
+         public pairs(Vector2 _a, Vector2 _b)
+         {
+             a = _a;
+             b = _b;
+         }
+     }
+ 
+     public static void PrintDebug<T>(T msg)
+     {
+         if (debug)
+         {
+             Debug.Log(msg);
+         }
+     }
+     public enum WallType
+     {
+         Plain,
+         Door,
+         None
+         //Window
+     }
+     public enum Status
+     {
+         Pristine,
+         Destroyed,
+         None
+     }
+     public enum CellType
+     {
+         None,
+         Room,
+         Hallway,
+         Stairs,
+         Edge,
+         Door,
+         Restricted
+     }
+     public class Room
+     {
+         public BoundsInt bounds;
+         public List<Tile> tiles = new List<Tile>();
+         public Vector3Int location;
+         public List<Vector3Int> positions = new List<Vector3Int>();
+         public Dictionary<string, Tile> edgeDirections = new();
+         public Connections Connections = new Connections();
+         public List<Prop> props = new();
+         public Dictionary<string, List<(Room, Tile)>> roomConnections = new();
+         public Dictionary<string, Dictionary<Room, List<Tile>>> availableRoomConnections = new();
+         public Dictionary<string, Dictionary<string, int>> availableRoomConnectionCounts = new();
+         public GameObject roomPrefab;
+         public Vector3Int roomUnitSize;
+         public Vector3Int roomWorldSize;
+         public int unitSize;
+         public bool outOfBounds;
+         public bool isHallway = false;
+         public Material material;
+         public TileProperties properties;
+ 
+         public Room(Vector3Int location, Vector3Int size, Grid3D<Tile> grid, GameObject roomPrefab, int unitSize, Material mat, GrimmGen gg = null)
+         {
+             InitializeRoom(location, size, grid, roomPrefab, unitSize, mat, gg);
+         }
+ 
+         public void InitializeRoom(Vector3Int location, Vector3Int size, Grid3D<Tile> grid, GameObject roomPrefab, int unitSize, Material mat, GrimmGen gg = null)
+         {
+             this.outOfBounds = false;
+             this.unitSize = unitSize;

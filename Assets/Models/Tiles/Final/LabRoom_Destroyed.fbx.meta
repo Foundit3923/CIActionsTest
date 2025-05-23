@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: 8ae1651e4a277b845bfdb428d499b274
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capsule_Broken_Glass
+    second: {fileID: 2100000, guid: 6087ec70a2ace714e89ac6137a272f3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capsule_Broken_Pipe
+    second: {fileID: 2100000, guid: b9a12c71477547a4b8c24040f26afd1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capsule_Destroyed_Base
+    second: {fileID: 2100000, guid: 2e62b3196789bb6489b831b4dfafc160, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capsule_Destroyed_Sides
+    second: {fileID: 2100000, guid: d0436fda1f41d1e4488616492741ada4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capsule_Fractured_Glass
+    second: {fileID: 2100000, guid: 41b6e952b95119c4d9d652f314761001, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Capsule_Fractured_Pipe
+    second: {fileID: 2100000, guid: 74e2294bf796f32428c04b1d4e63cbbc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_Base_Destroyed
+    second: {fileID: 2100000, guid: 0519cec11da16df4984f406ff90637d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_Destroyed
+    second: {fileID: 2100000, guid: b5ad3fc372789754080e4bddd48440dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_Legs_Destroyed
+    second: {fileID: 2100000, guid: b888d5434f88d054bbe287e996cb2630, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chair_Wheels_Destroyed
+    second: {fileID: 2100000, guid: 4e2f94ce6b542c7438d8ba212c018988, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ControlPanels
+    second: {fileID: 2100000, guid: b498120e49c8ac049996b366ab58abfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ControlPanels_Destroyed
+    second: {fileID: 2100000, guid: d001decd0312921488bba068e774d1da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ControlTower_Base
+    second: {fileID: 2100000, guid: 772dda8b38e1cb04888553f7e55bd8a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ControlTower_Panel
+    second: {fileID: 2100000, guid: e205ef87ddf54144585cbda14a863bf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Desk_Destroyed
+    second: {fileID: 2100000, guid: 439d1ff2a7018e44dac61238a487616a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorFrame_Destroyed
+    second: {fileID: 2100000, guid: 4702ef3f6c73f3648ab6e8ea3a86a6cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DoorWall_Destroyed
+    second: {fileID: 2100000, guid: f1856ad4fd5086541a5fb6301d012f71, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Destroyed
+    second: {fileID: 2100000, guid: 9f4b6b8e6b41889499ba310c6c9d57a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_Destroyed
+    second: {fileID: 2100000, guid: 23dce49b4e130d445b2db9ede5a38a20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Generator_Destroyed
+    second: {fileID: 2100000, guid: 94c5a84fdde60e242b01e25dd6657dc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Generator_Tray_Destroyed
+    second: {fileID: 2100000, guid: ce7a8bca6a529c94d8344e281a7a0540, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Generator_Tube_Destroyed
+    second: {fileID: 2100000, guid: cf48e6f474656394fb044c51de4ee0cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Genertaor_Panels_Destroyed
+    second: {fileID: 2100000, guid: 5e49f015f83c462439f4e20a2962a4c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KeyBoard_Destroyed
+    second: {fileID: 2100000, guid: e04cebbc62dc1734e9924a749a201dc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Keypad_Destroyed
+    second: {fileID: 2100000, guid: 89ed0fe7162ea364d8482e1122e2c526, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MonitorWires_Destroyed
+    second: {fileID: 2100000, guid: 755e4ec8ef2aae24ba2a238cad614e7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Monitor_Destroyed
+    second: {fileID: 2100000, guid: 638a2bb7974482d45a86edd23427afab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MousePad_Destroyed
+    second: {fileID: 2100000, guid: 8a0c5a6786dd6c544a76366072f43732, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mouse_Destroyed
+    second: {fileID: 2100000, guid: 1a532bd7649c9f641aff943e04471d25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlainWall_Destroyed
+    second: {fileID: 2100000, guid: 8b7a0f3bbc2a0f04594a6a83a5d10569, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof_Destroyed
+    second: {fileID: 2100000, guid: 71388b07e5f6aa043a3a9ad2a02e750c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof_Glass_Destroyed
+    second: {fileID: 2100000, guid: 84df44c972be3f04f8b01289bd0d810c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StandingMonitor_Base_Destroyed
+    second: {fileID: 2100000, guid: e829390549498544994188c108227d11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StandingMonitor_Monitor_Destroyed
+    second: {fileID: 2100000, guid: 3c44e7dc7f538214e9ea5cffffe7b93a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StandingMonitor_Pole_Destroyed
+    second: {fileID: 2100000, guid: 3b27c0c701c269c458f9a21b387db3a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StandingMonitor_Wires_Destroyed
+    second: {fileID: 2100000, guid: 2ea3477ab5626d447b05bd790d9a6b27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vents_Destroyed
+    second: {fileID: 2100000, guid: 33cc4afbba214224c923a69f90c842c8, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

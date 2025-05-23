@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 7a55ee741c502064e81b812872839227
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - transport: {instanceID: 0}
+  - authenticator: {instanceID: 0}
+  - playerPrefab: {fileID: 694287549259351508, guid: 9db22786e58984c408a035d811272756, type: 3}
+  - gamePlayerPrefab: {instanceID: 0}
+  - steamLobby: {instanceID: 0}
+  - utils: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>NReco.LambdaParser</id>
+    <version>1.0.12</version>
+    <title>Dynamic expressions evaluator</title>
+    <authors>Vitalii Fedorchenko</authors>
+    <owners>Vitalii Fedorchenko</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://raw.githubusercontent.com/nreco/lambdaparser/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/nreco/lambdaparser</projectUrl>
+    <iconUrl>https://www.nrecosite.com/img/nreco-logo-200.png</iconUrl>
+    <description>Runtime expressions parser and evaluator (formulas, conditions, method calls, properties/indexers etc). Builds LINQ expression tree and compiles it to lambda delegate with full support of dynamically typed variables.</description>
+    <releaseNotes>Source code and examples: https://github.com/nreco/lambdaparser
+	
+v.1.0.12 changes:
+- fixed an issue when comparison result is used as an argument in a method call #30
+
+v.1.0.11 changes:
+- removed legacy Portable targets that cause build problems in some environments
+	
+v.1.0.10 changes:
+- fixed issue with 'Object must implement IConvertible' (occurs when delegate argument doesn't implement IConvertible, even if conversion is not needed)
+	
+v.1.0.9 changes:
+- defined +/- operations for datetime/timespan types #17
+- added ILambdaValue for accessing real values in Expression produced by LamdbaParser #16
+- added option to allow single equal sign '=' for comparison #13
+- added netstandard2.0 build #15
+	
+v.1.0.8 changes:
+- fixed parse error of calls chain like delegate().method1().method2()
+	
+v.1.0.7 changes:
+- fixed evaluation of and/or conditions (exceptions like 'AndAlso / OrElse is not defined')
+
+v.1.0.6 changes:
+- introduced IValueComparer interface for custom values comparison (https://github.com/nreco/lambdaparser/issues/10)
+- default ValueComparer implementation with options: NullComparison (MinValue, Sql), SuppressErrors
+- starting from this version expression cache is instance specific (was global) because calculation result may depend on IValueComparer implementation</releaseNotes>
+    <copyright>Copyright (c) 2013-2020 Vitalii Fedorchenko</copyright>
+    <tags>LambdaParser Formula Parser Math Expression Evaluator Eval LINQ-dynamic PCL netstandard netcore net40 net45 WindowsPhone8 Silverlight</tags>
+    <repository type="git" url="https://github.com/nreco/lambdaparser" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

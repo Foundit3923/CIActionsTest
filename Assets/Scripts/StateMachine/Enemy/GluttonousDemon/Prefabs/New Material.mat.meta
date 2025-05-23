@@ -1,0 +1,18 @@
+<<<<<<<< HEAD:Assets/Scripts/StateMachine/Enemy/GluttonousDemon/New Material.mat.meta
+fileFormatVersion: 2
+guid: ae94be54f050b5f41874f811f5f19020
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+========
+fileFormatVersion: 2
+guid: 1d76f078a1235604fbca6fb036fdb44c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>>> Fizzy:Assets/Prefabs/Menus/NoLobbiesMessage.prefab.meta

@@ -4,7 +4,27 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - TutorialRequirement
+  - AP
+  - CinemachineTarget
+  - Networking
+  - NetworkingManager
+  - Console
+  - Prop
+  - LightProp
+  - Light
+  - LanternHead
+  - Interactable
+  - ReceptionPortal
+  - LobbyPortal
+  - MountPoint
+  - chairSpawnPoints
+  - Utilities
+  - Comms
+  - ChairSpawnPoint
+  - Monster
+  - CameraPosition
+  - GluttonousDemon
+  - FollowCamera
   layers:
   - Default
   - TransparentFX
@@ -12,29 +32,29 @@ TagManager:
   - 
   - Water
   - UI
+  - NavMesh
+  - Player
+  - Tile
+  - Obstacle
+  - NightGauntLayer
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Room
+  - AP
+  - Sjena
+  - Hallway
+  - Connection
+  - Enemy
+  - Prop
+  - LightProp
+  - ToolTip
+  - Invisible
+  - GroundCheck
+  - Wall
+  - Roof
   - 
   - 
   - 
